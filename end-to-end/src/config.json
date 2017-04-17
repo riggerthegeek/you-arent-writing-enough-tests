@@ -1,0 +1,5 @@
+{
+  "mongodb": {
+    "url": "mongodb://mongodb:27017/e2e-example"
+  }
+}

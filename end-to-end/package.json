@@ -1,0 +1,22 @@
+{
+  "name": "end-to-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db:import": "node test/e2e/data/dbImport",
+    "test": "npm run db:import && npm run test:e2e",
+    "test:e2e": "mocha --ui bdd --recursive test/e2e/tests"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.3.0",
+    "body-parser": "^1.17.1",
+    "chai": "^3.5.0",
+    "express": "^4.15.2",
+    "mocha": "^3.2.0",
+    "mongodb": "^2.2.25",
+    "supertest": "^3.0.0"
+  }
+}

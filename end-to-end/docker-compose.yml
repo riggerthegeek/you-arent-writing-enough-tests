@@ -1,0 +1,18 @@
+version: '3'
+services:
+
+  mongodb:
+    image: mongo:3.2
+    ports:
+      - "9997:27017"
+
+  www:
+    build: .
+    ports:
+      - "9999:9999"
+    volumes:
+      - .:/opt/app
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
