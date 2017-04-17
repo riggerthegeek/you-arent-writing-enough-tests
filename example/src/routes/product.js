@@ -13,6 +13,13 @@ exports.default = function (productService) {
         '/': {
             '/:id': {
                 get: ({ params }) => productService.findProductById(params.id)
+                    .then(result => {
+                        if (!result) {
+                            return 404;
+                        }
+
+                        return result;
+                    })
             },
 
             get: () => productService.findAllProducts()

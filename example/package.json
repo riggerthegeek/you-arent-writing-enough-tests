@@ -8,9 +8,43 @@
     "steeplejack": "^3.0.0",
     "steeplejack-express": "^0.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "nyc": "^10.2.0",
+    "proxyquire": "^1.7.11",
+    "sinon": "^2.1.0",
+    "sinon-as-promised": "^4.0.3",
+    "sinon-chai": "^2.9.0",
+    "supertest": "^3.0.0"
+  },
+  "nyc": {
+    "all": true,
+    "check-coverage": true,
+    "cache": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "include": [
+      "src/*.js",
+      "src/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "coverage": "nyc mocha --ui bdd --recursive test/unit",
+    "serve": "nodemon ./src/app",
+    "test": "npm run test:unit && npm run test:e2e && npm run coverage",
+    "test:e2e": "mocha --ui bdd --recursive test/e2e/tests",
+    "test:unit": "mocha --ui bdd --recursive test/unit"
   },
   "author": "",
   "license": "ISC"

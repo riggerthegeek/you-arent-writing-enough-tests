@@ -15,10 +15,10 @@ describe('/product tests', function () {
 
         describe('GET', function () {
 
-            it('should return 204 if no product found', function () {
+            it('should return 404 if no product found', function () {
 
                 return request.get('/product/22')
-                    .expect(204);
+                    .expect(404);
 
             });
 
