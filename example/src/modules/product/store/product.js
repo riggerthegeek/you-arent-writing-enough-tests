@@ -8,6 +8,10 @@
 
 /* Files */
 
+/*
+    This is to avoid having to bother with a DB
+    connection. Normally, we'd connect a DB
+ */
 const productList = [{
     id: 1,
     name: 'iPhone',
