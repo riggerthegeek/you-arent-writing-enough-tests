@@ -9,15 +9,19 @@
 /* Files */
 
 exports.default = (productStore, ProductsCollection, ProductModel) => ({
-    findAllProducts: () => productStore.getAllProducts()
-        .then(result => ProductsCollection.toModels(result)),
+    findAllProducts () {
+        return productStore.getAllProducts()
+            .then(result => ProductsCollection.toModels(result))
+    },
 
-    findProductById: id => productStore.getProductById(id)
-        .then(result => {
-            if (result) {
-                return ProductModel.toModel(result);
-            }
-        })
+    findProductById (id) {
+        return productStore.getProductById(id)
+            .then(result => {
+                if (result) {
+                    return ProductModel.toModel(result);
+                }
+            })
+    }
 });
 
 exports.inject = {
