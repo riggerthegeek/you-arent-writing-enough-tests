@@ -48,7 +48,7 @@ describe('Product service tests', function () {
 
                 this.store.getAllProducts.resolves('some result');
 
-                this.collection.toModels.resolves('collection result');
+                this.collection.toModels.returns('collection result');
 
                 return this.obj.findAllProducts()
                     .then(result => {
@@ -73,7 +73,7 @@ describe('Product service tests', function () {
 
                 this.store.getProductById.resolves('some result');
 
-                this.model.toModel.resolves('model result');
+                this.model.toModel.returns('model result');
 
                 return this.obj.findProductById('productId')
                     .then(result => {
