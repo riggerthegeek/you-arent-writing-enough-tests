@@ -27,9 +27,11 @@ const productList = [{
 }];
 
 exports.default = () => ({
-    getAllProducts: () => Promise.resolve(productList),
+    getAllProducts () {
+        return Promise.resolve(productList)
+    },
 
-    getProductById: productId => {
+    getProductById (productId) {
         const product = productList.find(({ id }) => id === Number(productId));
 
         return Promise.resolve(product);
