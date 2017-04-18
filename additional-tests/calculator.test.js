@@ -42,7 +42,7 @@ describe('Calculator test', function () {
 
     });
 
-    it('should add together n numbers', function () {
+    it.skip('should add together n numbers', function () {
 
         const numbers = [[
             2,4,6,8
