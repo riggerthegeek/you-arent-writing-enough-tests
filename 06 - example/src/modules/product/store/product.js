@@ -35,6 +35,11 @@ exports.default = () => ({
         const product = productList.find(({ id }) => id === Number(productId));
 
         return Promise.resolve(product);
+    },
+
+    someNoddyFunction (id) {
+        console.log(`This is id: ${id}`);
+        return Promise.resolve(id);
     }
 });
 

@@ -30,7 +30,8 @@ describe('Product service tests', function () {
         beforeEach(function () {
             this.store = {
                 getAllProducts: sinon.stub(),
-                getProductById: sinon.stub()
+                getProductById: sinon.stub(),
+                someNoddyFunction: sinon.spy()
             };
             this.collection = {
                 toModels: sinon.stub()
@@ -61,6 +62,11 @@ describe('Product service tests', function () {
                         expect(this.collection.toModels).to.be.calledOnce
                             .calledWithExactly('some result');
 
+                        /* We don't care what this returns, just that's called three times */
+                        expect(this.store.someNoddyFunction).to.be.calledThrice
+                            .calledWithExactly(1)
+                            .calledWithExactly(2)
+                            .calledWithExactly(5);
                     });
 
             });

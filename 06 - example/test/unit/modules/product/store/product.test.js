@@ -68,6 +68,21 @@ describe('Product store tests', function () {
 
         });
 
+        describe('#someNoddyFunction', function () {
+
+            it('should return an empty Promise', function () {
+
+                return this.obj.someNoddyFunction(222)
+                    .then(id => {
+
+                        expect(id).to.be.equal(222);
+
+                    });
+
+            });
+
+        });
+
     });
 
 });
